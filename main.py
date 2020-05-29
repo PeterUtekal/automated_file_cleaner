@@ -82,7 +82,7 @@ class App:
 				except:
 					print("The file: " + file + " already exists in this folder, it wil be deleted")
 					os.remove(downloads + "/" + file)
-			elif ext == ".csv" or:
+			elif ext == ".csv":
 				try:
 					shutil.move(downloads + "/" + file, spreadsheets)
 				except:
