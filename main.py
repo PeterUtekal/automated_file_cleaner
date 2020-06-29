@@ -15,6 +15,7 @@ presentations = "/Users/peterutekal/Documents/presentations"
 spreadsheets = "/Users/peterutekal/Documents/spreadsheets"
 textfiles = "/Users/peterutekal/Documents/textfiles" 
 php_scripts = "/Users/peterutekal/Documents/php_scripts"
+python_scripts = "/Users/peterutekal/Documents/pythonScripts"
 
 
 class App:
@@ -46,59 +47,65 @@ class App:
 		for file in files:
 			root, ext = os.path.splitext(file)
 	
-			if ext == ".jpeg" or ext == ".png" or ext == ".jpg" or ext == '.JPG':
+			if ext == ".jpeg" or ext == ".png" or ext == ".jpg" or ext == '.JPG' or ext == '.gif' or ext == '.svg':
 				try:
 					shutil.move(downloads + "/" + file, pictures)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".pdf" or ext == '.docx' or ext == ".PDF":	
 				try:
 					shutil.move(downloads + "/" + file, documents)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".dmg":
 				try:
 					shutil.move(downloads + "/" + file, installations) 
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".pkg" or ext == ".zip" or ext == ".iso" or ext == ".tar.gz":	
 				try:
 					shutil.move(downloads + "/" + file, packages)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".MP4" or ext == ".mov" or ext == '.mp4' or ext == '.MOV':	
 				try:
 					shutil.move(downloads + "/" + file, videos)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".pptx":
 				try:
 					shutil.move(downloads + "/" + file, presentations)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".csv":
 				try:
 					shutil.move(downloads + "/" + file, spreadsheets)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".txt":		
 				try:
 					shutil.move(downloads + "/" + file, textfiles)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 			elif ext == ".php":
 				try:
 					shutil.move(downloads + "/" + file, php_scripts)
 				except:
-					print("The file: " + file + " already exists in this folder, it wil be deleted")
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(downloads + "/" + file)
+			elif ext == ".py":
+				try:
+					shutil.move(downloads + "/" + file, python_scripts)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
 					os.remove(downloads + "/" + file)
 
 		print("Downloads sorted.")
@@ -110,15 +117,47 @@ class App:
 			root, ext = os.path.splitext(file)
 		
 			if ext == ".jpeg" or ext == ".png" or ext == ".jpg":
-				shutil.move(desktop + "/" + file, pictures)
+				try:
+					shutil.move(desktop + "/" + file, pictures)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
 			elif ext == ".pdf":
-				shutil.move(desktop + "/" + file, documents)
+				try:
+					shutil.move(desktop + "/" + file, documents)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
 			elif ext == ".dmg":
-				shutil.move(desktop + "/" + file, installations)
+				try:
+					shutil.move(desktop + "/" + file, installations)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
 			elif ext == ".pkg" or ext == ".zip":
-				shutil.move(desktop + "/" + file, packages)
+				try:
+					shutil.move(desktop + "/" + file, packages)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
 			elif ext == ".MP4" or ext == ".mov":
-				shutil.move(desktop + "/" + file, videos)
+				try:
+					shutil.move(desktop + "/" + file, videos)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
+			elif ext == ".py":
+				try:
+					shutil.move(desktop + "/" + file, python_scripts)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
+			elif ext == ".php":
+				try:
+					shutil.move(desktop + "/" + file, php_scripts)
+				except:
+					print("The file: " + file + " already exists in this folder, it will be deleted")
+					os.remove(desktop + "/" + file)
 		
 		print ("Desktop sorted.")
 
